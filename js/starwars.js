@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const currentWord = currentWordArr.join("");
-    get('https://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/starwars/guess', {
+    get('https://cors-anywhere.herokuapp.com/http://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/starwars/guess', {
       player_id: getLocalStorageElement("player_id"),
       guess: currentWord,
       word_length: letters
