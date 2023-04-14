@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getNewMovieWordle() {
-    get('https://cors-anywhere.herokuapp.com/http://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/movie/get', {player_id: getLocalStorageElement("player_id"), guess_no: guessedMovieCount})
+    get('https://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/movie/get', {player_id: getLocalStorageElement("player_id"), guess_no: guessedMovieCount})
       .then(response => response.json())
       .then(response => {
         movie = response.data.movie;
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function handleSubmitWord() {
     const form = document.getElementById('movie_form');
 
-    get('https://cors-anywhere.herokuapp.com/http://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/movie/guess', {
+    get('https://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/movie/guess', {
       player_id: getLocalStorageElement("player_id"),
       guess: form.elements["movie"].value,
       guess_no: guessedMovieCount + 1

@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getNewCountryWordle() {
-    get('https://cors-anywhere.herokuapp.com/http://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/worldle2/get', {player_id: getLocalStorageElement("player_id")})
+    get('https://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/worldle2/get', {player_id: getLocalStorageElement("player_id")})
       .then(response => response.json())
       .then(response => {
         country = response.data.country;
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function handleSubmitWord() {
     const form = document.getElementById('country_form');
 
-    get('https://cors-anywhere.herokuapp.com/http://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/worldle2/guess', {
+    get('https://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/worldle2/guess', {
       player_id: getLocalStorageElement("player_id"),
       guess: form.elements["country"].value,
       guess_no: guessedCountryCount + 1
