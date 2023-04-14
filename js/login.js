@@ -2,7 +2,7 @@ function login() {
   const user = document.getElementById('username').value;
   const pass = document.getElementById('password').value;
 
-  get('http://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/auth/login', {login: user, password: pass})
+  get('https://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/auth/login', {login: user, password: pass})
     .then(response => response.json())
     .then(response => {
       if (response.status === 200) {
@@ -25,7 +25,7 @@ function register() {
     return
   }
 
-  get('http://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/auth/create', {login: user, password: pass})
+  get('https://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/auth/create', {login: user, password: pass})
     .then(response => response.json())
     .then(response => {
       if (response.status === 200) {
@@ -40,7 +40,7 @@ function register() {
 function lost_password() {
   const user = document.getElementById('username').value;
 
-  get('http://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/auth/lostpassword', {login: user})
+  get('https://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/auth/lostpassword', {login: user})
     .then(response => response.json())
     .then(response => {
       if (response.status === 200) {

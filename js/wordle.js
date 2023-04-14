@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getNewWord() {
-    get('http://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/wordle/get', {player_id: getLocalStorageElement("player_id"), word_length: letters})
+    get('https://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/wordle/get', {player_id: getLocalStorageElement("player_id"), word_length: letters})
       .then(response => response.json())
       .then(response => {
         word = response.data
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(response => response.json())
       .then(response => {
         if (response.title !== "No Definitions Found") {
-          get('http://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/wordle/guess', {
+          get('https://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/wordle/guess', {
             player_id: getLocalStorageElement("player_id"),
             guess: currentWord,
             word_length: letters

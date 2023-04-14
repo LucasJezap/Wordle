@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getNewSudoku() {
-    get('http://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/sudoku/get', {player_id: localStorage.getItem("player_id"), new_sudoku: getLocalStorageElement("sudoku_win")})
+    get('https://ec2-54-93-222-115.eu-central-1.compute.amazonaws.com:8080/sudoku/get', {player_id: localStorage.getItem("player_id"), new_sudoku: getLocalStorageElement("sudoku_win")})
       .then(response => response.json())
       .then(response => {
         resetLocalStorage("sudoku");
